@@ -1,10 +1,10 @@
 const http = require('http');
-const mysql = require('mysql');
+var mysql = require('mysql');
 const fs = require('fs');
 
 
 //Database file names
-const con = mysql.createConnection({
+var con = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'Maggie' 
@@ -13,7 +13,7 @@ const con = mysql.createConnection({
 con.connect(function(err){
   if (err) throw err;
   console.log("Connected to Database")
-})
+});
 
 //starting the server and will let us know in terminal if the server connects successfully
 http.createServer(function (req, res) {

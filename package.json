@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
   }
 }
