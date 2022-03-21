@@ -2,7 +2,8 @@ create database ProjectSQL;
 use ProjectSQL;
 
 SET FOREIGN_KEY_CHECKS=0;
-
+CREATE USER 'NodeJS-login'@'localhost' identified with mysql_native_password BY 'Password123'; 
+Grant ALL privileges on ProjectSQL.* to 'NodeJS-login'@'localhost';
 CREATE TABLE Roles (
     position VARCHAR(30) NOT NULL DEFAULT '',
     PRIMARY KEY (position)
@@ -27,6 +28,12 @@ CREATE TABLE SeedsType (
     expirationTime VARCHAR (10) NOT NULL DEFAULT '',
     PRIMARY KEY (seedId)
 );
+CREATE TABLE SeedsImage (
+    seedImage MEDIUMBLOB NOT NULL,
+    seedID int NOT NULL,
+    PRIMARY KEY (seedImage),
+    FOREIGN KEY (seedID) REFERENCES SeedsType (seedID)
+);
 
 CREATE TABLE SeedsInStock (
     batchNo int NOT NULL AUTO_INCREMENT,
@@ -41,8 +48,7 @@ CREATE TABLE SeedsInStock (
         ON UPDATE CASCADE
 );
 
-
-
+-----------------------------------------------------------------------------------------------
 
 insert into Roles(position)
 values   ('Gardener'),

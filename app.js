@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const mysql = require('mysql');
 // const { Http2ServerRequest } = require('http2');
 
-dotenv.config({ path: './.env'})
+dotenv.config({ path: './config.env'});
 
 const app = express();
 
@@ -25,22 +25,7 @@ db.connect(function(error){
   else console.log('MYSQL is connected...')
 });
 
-// db.connect (function(err){
-//   if (error) {
-//     console.log(err)
-//   } else {
-//     console.log("MYSQL Connected...")
-//   }
-// })
 
-// app.get('/createdb', (req, res) => {
-//   let sql ='CREATE DATABASE projectsql';
-//   db.query(sql, () => {
-//     if(error) throw err;
-//     console.log(result);
-//     res.send('database created...');
-//   })
-// })
 
 //open login page...this will be home page.
 app.get("/", (req, res) => {
