@@ -9,7 +9,7 @@ const exp = require('constants');
 
 const app = express();
 
-dotenv.config({ path: './.env'})
+dotenv.config({ path: './config.env'})
 
 const db = mysql.createConnection({
   host : process.env.DATABASE_HOST,
