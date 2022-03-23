@@ -65,3 +65,5 @@ values    ('Pumpkin' ,'0.02' ,'69' ,'420');
         
 insert into SeedsInStock(expirationDate, receivedDate, weight, quantity, seedID)
 values     ('2020-8-13' ,'2020-10-20' ,'500' ,'250000' ,'1');
+
+Select * from Roles where position = 'Administrator';

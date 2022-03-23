@@ -6,6 +6,7 @@ const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const e = require('express');
 const exp = require('constants');
+const { request } = require('http');
 
 const app = express();
 
@@ -35,6 +36,8 @@ db.connect(function(error){
   else console.log('MYSQL is connected...')
 });
 
+
+
 //defind routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
@@ -44,26 +47,3 @@ app.listen(8080, () => {
   console.log("Server started on port 8080");
 });
 
-// app.post('/login', (req, res) => {
-//   const {email, password} = req.body;
-
-//   db.query(
-//     "SELECT * FROM Users WHERE email =? AND passcode =? ",
-//     [email, password], (error, result) => {
-//      if (error) {
-//        res.send({ err : err})
-//        console.log(error);
-//        }
-
-
-//        else {
-//          if (result) {
-//            res.send(result)
-//          }
-//          else {
-//            res.send({ message : "Wrong credentials"});
-//          }
-//        }
-//      }
-//   )
-// });

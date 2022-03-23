@@ -100,6 +100,21 @@ exports.login = ('/auth', function(request, response) {
 	}
 });
 
+
+
+
+
+exports.authpage = (permission) => {
+    return (req, res, next) =>{
+        const userRole = db.query("SELECT * FROM Roles WHERE position = 'Administrator'");
+        if (permission.includes(userRole)){
+            next();
+        } else {
+            return res.status(401).json("You dont have permission!")
+        }
+    }
+};
+
 // exports.login = (req,res) =>  {
 //     const {email, password} = req.body;
   
