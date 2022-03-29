@@ -1,14 +1,19 @@
-const express = require('express');
-const authController = require('../controllers/auth');
+// const express = require('express');
+// const authController = require('../controllers/auth');
 
-const router = express.Router();
+// const router = express.Router();
 
-// router.get('/', (req, res) =>{
-//     res.render('index');
-// });
+// // router.get('/', (req, res) =>{
+// //     res.render('index');
+// // });
 
-router.post('/register', authController.register )
-router.post('/login', authController.login)
+// router.post('/register', authController.register )
+// router.post('/login', authController.login)
 
-module.exports = router;
+
+
+// //code works without this line? Thought we would need this. 
+// // router.post('/adminDashboard', authController.adminDashboard)
+
+// module.exports = router;
 
