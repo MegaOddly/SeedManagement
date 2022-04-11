@@ -64,7 +64,10 @@ app.use((req,res,next) => {
 /*/  This is the start of the routes */
 //login
 
-
+app.get('/fakeuser', async (req,res) =>{
+    const user = new User({email:'Admin@admin.com', username: 'Admin', role: 'Administrator', name: 'Admin'});
+    const newUser = await User.register(user, 'Admin');
+})
 app.get('/register', isLoggedIn, isAdmin, (req,res) => {
     res.render('register');
 })
